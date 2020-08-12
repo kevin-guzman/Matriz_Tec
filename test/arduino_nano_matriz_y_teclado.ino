@@ -24,8 +24,6 @@ const byte col[] = {
   COL_1, COL_2, COL_3, COL_4, COL_5, COL_6, COL_7, COL_8
 };
 
-// The display buffer
-// It's prefilled with a smiling face (1 = ON, 0 = OFF)
 
 byte EMPTY[] = {B00000000, B00000000, B00000000, B00000000, B00000000, B00000000, B00000000, B00000000};
 byte A[] = {  B00000000, B00111100, B01100110, B01100110, B01111110, B01100110, B01100110, B01100110};
@@ -75,7 +73,7 @@ int lonitudCadenaEntrada=cadenaEntrada.length();
 void loop() {
   
 
-  for (byte k = 0; k < lonitudCadenaEntrada ; k++) {//sizeof(cadenaEntrada)
+  for (byte k = 0; k < lonitudCadenaEntrada ; k++) {
     Serial.println(lonitudCadenaEntrada);
     if (index < lonitudCadenaEntrada) {
     index++;
@@ -197,7 +195,7 @@ void loop() {
 void  letraEnPantalla(byte buffer1[])
 {
 
-  // Turn on each row in series
+ 
   for (byte h = 12; h > 0 ; h--) {
 
     for (byte i = 0; i < 8; i++)       
