@@ -24,7 +24,6 @@ const byte col[] = {
   COL_1, COL_2, COL_3, COL_4, COL_5, COL_6, COL_7, COL_8
 };
 
-
 byte EMPTY[] = {B00000000, B00000000, B00000000, B00000000, B00000000, B00000000, B00000000, B00000000};
 byte A[] = {  B00000000, B00111100, B01100110, B01100110, B01111110, B01100110, B01100110, B01100110};
 byte B[] = {B01111000, B01001000, B01001000, B01110000, B01001000, B01000100, B01000100, B01111100};
@@ -53,8 +52,6 @@ byte X[] = {B00000000, B01000010, B00100100, B00011000, B00011000, B00100100, B0
 byte Y[] = {B00000000, B01000100, B00101000, B00010000, B00010000, B00010000, B00010000, B00000000};
 byte Z[] = {B00000000, B00111100, B00000100, B00001000, B00010000, B00100000, B00111100, B00000000};
 
-float timeCount = 0;
-
 void setup()
 {
   
@@ -66,20 +63,23 @@ void setup()
 }
 
 String cadenaEntrada = "A B C D E F G H";
+
 int cont = 0;
 int index = 0;
-
 int lonitudCadenaEntrada=cadenaEntrada.length();
+
 void loop() {
   
 
   for (byte k = 0; k < lonitudCadenaEntrada ; k++) {
+    
     Serial.println(lonitudCadenaEntrada);
+    
     if (index < lonitudCadenaEntrada) {
-    index++;
-  } else {
-    index = 0;
-  }
+      index++;
+    } else {
+      index = 0;
+    }
   if (cadenaEntrada.charAt(index) == ' ') {
     letraEnPantalla(EMPTY);
 
@@ -186,7 +186,7 @@ void loop() {
     }
     else if (cadenaEntrada.charAt(index) == 'Z') {
     letraEnPantalla(Z);
-
+      
     }
 
   }
